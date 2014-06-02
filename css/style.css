@@ -1,0 +1,417 @@
+span {
+  display: inline-block; }
+
+a {
+  text-decoration: none;
+  color: #999999; }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center; }
+
+p {
+  padding: 0;
+  margin: 0; }
+
+label, input, textarea {
+  outline: none;
+  display: block;
+  border: none;
+  margin: 0;
+  padding: 0; }
+
+input, textarea {
+  width: 350px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-transition: .1s linear;
+  -moz-transition: .1s linear; }
+  input:focus, textarea:focus {
+    padding: 5px;
+    border: 3px solid sandybrown; }
+
+img {
+  border: 0;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 0; }
+
+html {
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0; }
+
+body {
+  font: 1.2em/1.4em 'Happy Monkey',Arial,helvetica,sans-serif;
+  background-color: #f6f6f6; }
+
+#about {
+  background-color: #ffffff; }
+
+#portfolio {
+  background: #e6e6e6; }
+
+#contact {
+  position: relative;
+  height: 620px; }
+
+#dateClock {
+  padding: 50px;
+  height: 150px;
+  background-color: #dddddd; }
+
+.logoWrapper {
+  margin: 10px 0;
+  float: left; }
+
+@-webkit-keyframes logoRotate {
+  from {
+    -webkit-transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@-moz-keyframes logoRotate {
+  from {
+    -moz-transform: rotate(0deg); }
+
+  to {
+    -moz-transform: rotate(360deg); } }
+
+@-o-keyframes logoRotate {
+  from {
+    -o-transform: rotate(0deg); }
+
+  to {
+    -o-transform: rotate(360deg); } }
+
+@keyframes logoRotate {
+  from {
+    transform: rotate(0deg); }
+
+  to {
+    transform: rotate(360deg); } }
+
+.logo {
+  height: 30px;
+  width: 30px;
+  vertical-align: bottom;
+  display: inline-block;
+  -webkit-animation: logoRotate 5s infinite;
+  /* Chrome, Safari 5+ */
+  -moz-animation: logoRotate 5s infinite;
+  /* Firefox 5-15 */
+  -o-animation: logoRotate 5s infinite;
+  /* Opera 12.00 */
+  animation: logoRotate 5s infinite;
+  /* Chrome, Firefox 16+, IE 10+, Opera 12.10+ */ }
+
+.slogan {
+  font: 5.2em 'Roboto', sans-serif;
+  text-transform: uppercase;
+  height: 350px;
+  padding: 50px 20px; }
+  .slogan span {
+    display: none; }
+
+.name {
+  text-transform: uppercase;
+  font-size: 2.2em;
+  line-height: 1em;
+  font-weight: bolder;
+  color: #999999;
+  display: inline-block; }
+
+.subTitle {
+  float: left; }
+
+.navLinks {
+  text-transform: uppercase;
+  font-size: 1.4em;
+  line-height: 1.6em;
+  float: right;
+  margin-top: 30px; }
+  .navLinks li {
+    text-align: center;
+    list-style: none;
+    display: inline-block;
+    width: 100px;
+    background: #ffffff;
+    box-shadow: 1px 1px 1px #e6e6e6; }
+    .navLinks li a {
+      display: block; }
+    .navLinks li:hover a {
+      color: sandybrown;
+      border-bottom: 3px solid #1bb5ff; }
+
+.aboutMyself {
+  font: 1.8em 'Happy Monkey', sans-serif;
+  float: right;
+  padding: 20px;
+  display: none; }
+  .aboutMyself a {
+    color: #fb8521; }
+
+.firstRow {
+  color: #e5e5e5; }
+
+.secondRow {
+  color: #a5a5a5; }
+
+.thirdRow {
+  color: #666666; }
+
+.fourthRow {
+  color: #262626; }
+
+.round {
+  height: 220px;
+  width: 220px;
+  border-radius: 110px;
+  -webkit-border-radius: 110px;
+  -moz-border-radius: 110px;
+  -o-border-radius: 110px;
+  overflow: hidden; }
+
+.flipContainer {
+  padding-top: 50px;
+  position: relative; }
+
+.flipWrapper {
+  margin: 0 160px 50px 0;
+  float: left; }
+  .flipWrapper:nth-child(3n) {
+    margin: 0;
+    float: right; }
+
+.flip {
+  background-color: #ffffff;
+  border: 1px solid #f6f6f6;
+  box-shadow: inset 0 0 2px #333333;
+  -webkit-box-shadow: inset 0 0 2px #333333;
+  -o-box-shadow: inset 0 0 2px #333333;
+  -moz-box-shadow: inset 0 0 2px #333333; }
+  .flip:hover {
+    border-left: none; }
+    .flip:hover .flipFront {
+      transition: .4s ease;
+      -webkit-transition: .4s ease;
+      -moz-transition: .4s ease;
+      -o-transition: .4s ease;
+      -ms-transition: .4s ease;
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      box-shadow: 0px 0 10px #252525; }
+    .flip:hover .flipBack {
+      display: inline-block; }
+
+.flipFront {
+  transition: .4s ease;
+  -webkit-transition: .4s ease;
+  -moz-transition: .4s ease;
+  -o-transition: .4s ease;
+  -ms-transition: .4s ease;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  float: left;
+  display: inline-block; }
+  .flipFront img {
+    border-radius: 110px;
+    -webkit-border-radius: 110px;
+    -moz-border-radius: 110px;
+    -o-border-radius: 110px; }
+
+.flipBack {
+  display: none;
+  margin-left: 50px;
+  float: left; }
+
+#canvas-map {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: -200px;
+  left: 0;
+  right: 0;
+  z-index: 0; }
+
+.contactForm {
+  background-color: #ffffff;
+  position: absolute;
+  width: 350px;
+  padding: 15px;
+  margin: 90px 20px;
+  color: #999999;
+  font-size: 15px;
+  z-index: 100; }
+
+.socialLinks {
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+  bottom: 20%;
+  bottom: 20%; }
+  .socialLinks li {
+    display: inline-block;
+    background: #666666;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    overflow: hidden;
+    opacity: .5; }
+    .socialLinks li:hover {
+      opacity: 1; }
+
+.formTextarea {
+  height: 150px;
+  border: 1px solid #ccc; }
+
+.formText {
+  height: 35px;
+  border: 1px solid #ccc; }
+
+.formTitle {
+  padding: 5px 0; }
+
+.wrapper {
+  -webkit-transition: .15s linear; }
+
+.footer {
+  border-top: 1px solid lightgrey; }
+
+.button {
+  padding: 10px 20px;
+  display: block;
+  margin: 10px 0;
+  color: #fff;
+  border: none;
+  background: #1bb5ff;
+  cursor: pointer;
+  text-transform: uppercase; }
+
+.clearFix:after {
+  clear: both;
+  content: '';
+  display: block; }
+
+.commonWith {
+  width: 980px;
+  max-width: 1100px;
+  margin: 0 auto; }
+
+.commonHeight {
+  height: 620px;
+  overflow: hidden; }
+
+.scrollNav {
+  position: fixed;
+  right: 10px;
+  top: 40%; }
+
+.scrollNavItem {
+  margin: 10px; }
+  .scrollNavItem:hover .hoverText {
+    opacity: 1; }
+  .scrollNavItem a.active .dot {
+    background: none;
+    height: 8px;
+    width: 8px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    overflow: hidden; }
+  .scrollNavItem a.active .hoverText {
+    opacity: 1; }
+
+.dot {
+  box-sizing: border-box;
+  border: 1px solid #999999;
+  background: #999999;
+  margin: 0 auto;
+  height: 4px;
+  width: 4px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  overflow: hidden; }
+
+.hoverText {
+  opacity: 0;
+  width: 50px;
+  text-align: right; }
+
+@media screen and (max-width: 780px) {
+  .commonWith {
+    width: 680px;
+    max-width: 780px; }
+
+  .flipWrapper {
+    margin: 0 10px 5px 0; }
+
+  .flip:hover .flipFront {
+    transition: .4s ease;
+    -webkit-transition: .4s ease;
+    -moz-transition: .4s ease;
+    -o-transition: .4s ease;
+    -ms-transition: .4s ease;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    display: none; }
+  .flip:hover .flipBack {
+    margin: 20px;
+    text-align: center;
+    display: block; } }
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 1em;
+    line-height: 1.2em;
+  }
+
+  .slogan {
+    font-size: 4.2em; }
+
+  .commonWith {
+    width: 380px;
+    max-width: 480px;
+    margin: 0 auto; }
+
+  .logoWrapper {
+    float: none;
+    text-align: center; }
+
+  .navLinks {
+    float: none;
+    text-align: center;
+    padding: 0;
+    margin: 0; }
+    .navLinks li {
+      width: 100%;
+      margin: 10px auto; }
+      .navLinks li:hover {
+        background-color: deepskyblue; }
+
+  .flipWrapper {
+    margin: 0; }
+    .flipWrapper:nth-child(3n) {
+      margin: 0;
+      float: none; }
+
+  .flip {
+    overflow: hidden;
+    margin: 25px; } }
