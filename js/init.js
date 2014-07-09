@@ -39,4 +39,25 @@ $(document).ready(function (){
     $('.scrollNav').scrollNav();
     $('.navLinks').scrollNav();
 
+    $('.contactForm').submit(function(e){
+
+	console.log($('.contactForm').serialize());
+	
+	e.preventDefault();
+	
+	var url = $(this).attr('action');
+	
+	$.post(
+		url,
+		$('.contactForm').serialize(),
+		function(data){
+			console.log(data);
+			$('.message').html(data.message)
+		},
+		'jason'				
+		);
+	
+
+	});
+
 });
