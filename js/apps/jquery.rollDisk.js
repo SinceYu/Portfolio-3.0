@@ -15,10 +15,10 @@
             },function(){
                 $(this).animate({"width":"220px","left":flipPosition},300,function(){
                     $(this).css({"position":"static","z-index":"0"});
-                })
-            })
+                });
+            });
 
-        })
+        });
 
     };
 
