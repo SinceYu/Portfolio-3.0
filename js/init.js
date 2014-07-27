@@ -35,13 +35,21 @@ $(document).ready(function (){
     });
 
     $('.aboutMyself').delay(200*i).fadeIn();
+	
+	//resume animation
+	
+	$('.resume').css("left",$(window).innerWidth());
+	
+	$('.aboutMyself a').click(function(e){
+		e.preventDefault();
+		$('.sloganWrapper').animate({"left":-$(window).innerWidth()});
+		//$('.resume').animate({"left":$('.sloganWrapper')});
+	});
 
     $('.scrollNav').scrollNav();
     $('.navLinks').scrollNav();
 
     $('.contactForm').submit(function(e){
-
-	console.log($('.contactForm').serialize());
 	
 	e.preventDefault();
 	
@@ -52,7 +60,7 @@ $(document).ready(function (){
 		$('.contactForm').serialize(),
 		function(data){
 			console.log(data);
-			$('.message').html(data.message)
+			$('.message').html(data.message);
 		},
 		'jason'				
 		);
