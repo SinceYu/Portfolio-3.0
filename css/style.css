@@ -511,6 +511,10 @@ body {
 }
 
 @media screen and (max-width: 780px) {
+
+    .sloganWrapper{
+        width: 780px;
+    }
   /* line 491, ../sass/style.scss */
   .commonWith {
     width: 680px;

@@ -1,27 +1,24 @@
 $(document).ready(function (){
 
-   var mapOptions = {
-       zoom: 15,
-       center: new google.maps.LatLng(-33.703171,151.089585),
-       mapTypeId: google.maps.MapTypeId.ROADMAP,
-       disableDefaultUI: true,
-       scrollwheel: false,
-       zoomControl: true
-   };
+//   var mapOptions = {
+//       zoom: 15,
+//       center: new google.maps.LatLng(-33.703171,151.089585),
+//       mapTypeId: google.maps.MapTypeId.ROADMAP,
+//       disableDefaultUI: true,
+//       scrollwheel: false,
+//       zoomControl: true
+//   };
 
-   var map = new google.maps.Map(document.getElementById("canvas-map"), mapOptions);
+ //  var map = new google.maps.Map(document.getElementById("canvas-map"), mapOptions);
 
-   var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+ //  var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
-   var marker = new google.maps.Marker({
-       position: new google.maps.LatLng(-33.703218,151.098285),
-       map: map,
-       icon: iconBase + 'schools_maps.png',
-       shadow: iconBase + 'schools_maps.shadow.png'
-   });
-
-      $('.flipWrapper').rollDisk();
-
+//   var marker = new google.maps.Marker({
+//       position: new google.maps.LatLng(-33.703218,151.098285),
+//       map: map,
+//       icon: iconBase + 'schools_maps.png',
+//       shadow: iconBase + 'schools_maps.shadow.png'
+//   });
 
     /***********slogan animation***********/
 
@@ -34,16 +31,25 @@ $(document).ready(function (){
         i++;
     });
 
-    $('.aboutMyself').delay(200*i).fadeIn();
-	
 	//resume animation
+
+	var offsetLeft = $('.sloganWrapper').offset().left;
+
+    $('.aboutMyself').delay(200*i).fadeIn();
 	
 	$('.resume').css("left",$(window).innerWidth());
 	
 	$('.aboutMyself a').click(function(e){
 		e.preventDefault();
 		$('.sloganWrapper').animate({"left":-$(window).innerWidth()});
-		//$('.resume').animate({"left":$('.sloganWrapper')});
+		$('.resume').animate({"left":offsetLeft});
+	});
+
+	$('.resume a').click(function(e){
+		e.preventDefault();
+		$('.resume').animate({"left":$(window).innerWidth()});
+		$('.sloganWrapper').animate({"left":offsetLeft});
+
 	});
 
     $('.scrollNav').scrollNav();
@@ -67,5 +73,24 @@ $(document).ready(function (){
 	
 
 	});
+
+    $(window).resize(function(e){
+
+        var $this= $(e.target);
+        var windowWidth =  $this.width();
+
+        if (windowWidth > 780) {
+            $('.flipWrapper').rollDisk();
+            console.log("480-780");
+        }else if (windowWidth >480 ){
+            $('.flipWrapper').stop();
+            console.log("480-780");
+        }else{
+            $('.flipWrapper').stop();
+            console.log("<480");
+        }
+
+    });
+
 
 });
