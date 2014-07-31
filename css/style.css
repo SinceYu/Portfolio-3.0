@@ -550,7 +550,8 @@ body {
 @media screen and (max-width: 480px) {
   /* line 520, ../sass/style.scss */
   body {
-    font-size: 1em/1.2em;
+    font-size: 1em;
+    line-height: 1.2em;
   }
 
   /* line 524, ../sass/style.scss */

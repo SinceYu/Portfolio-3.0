@@ -74,6 +74,8 @@ $(document).ready(function (){
 
 	});
 
+    $('.flipWrapper').rollDisk();
+
     $(window).resize(function(e){
 
         var $this= $(e.target);
@@ -81,13 +83,13 @@ $(document).ready(function (){
 
         if (windowWidth > 780) {
             $('.flipWrapper').rollDisk();
-            console.log("480-780");
+            console.log("true");
         }else if (windowWidth >480 ){
-            $('.flipWrapper').stop();
-            console.log("480-780");
+            $('.flipWrapper').rollDisk({animate:false});
+            console.log("false");
         }else{
-            $('.flipWrapper').stop();
-            console.log("<480");
+            $('.flipWrapper').rollDisk({animate:false});
+            console.log("false");
         }
 
     });
