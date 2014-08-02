@@ -15,14 +15,14 @@ module.exports = function(grunt){
 			},
 			
 			uglify:{
-			    options: {
-			            mangle: true
-			         	 },
+                 options: {
+                     mangle: true
+                    },
 				my_target:{
 					files: {
-	        				'js/apps/jquery.rollDisk.min.js': ['js/apps/jquery.rollDisk.js'],
+                            'js/apps/jquery.rollDisk.min.js': ['js/apps/jquery.rollDisk.js'],
 							'js/apps/jquery.scrollNav.min.js': ['js/apps/jquery.scrollNav.js']
-	     	 				}
+                            }
 						}
 			},
 			
@@ -32,7 +32,8 @@ module.exports = function(grunt){
 						sassDir: 'sass',
 						cssDir: 'css',
 						raw: 'preferred_syntax = :scss', // Use `raw` since it's not directly available
-						environment:'development'
+						environment:'development',
+                        clean:true
 					}
 				}
 
