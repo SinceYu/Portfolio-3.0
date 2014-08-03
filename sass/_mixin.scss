@@ -19,8 +19,6 @@
   -webkit-border-radius:$size * .5;
   -moz-border-radius: $size * .5;
   -o-border-radius: $size * .5;
-
-  overflow: hidden;
 }
 
 @mixin radius($size){

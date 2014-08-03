@@ -8,7 +8,7 @@ $contact_subject = $_POST['subject'];
 
 $contact_message = $_POST['message'];
 
-if(!empty($contact_name))
+if(!empty($contact_name)&!empty($contact_email))
 
 {
 
@@ -22,7 +22,10 @@ if(!empty($contact_name))
 
 	$extra = "From: $sender\r\n" . "Reply-To: $sender \r\n" . "X-Mailer: PHP/" . phpversion();
 
-	echo json_encode(array("message"=>"Message come from".$contact_email."has been sent"));
+	echo json_encode(array("message"=>"Your Message Has Been Sent Successfully"));
+
+}else{
+    echo json_encode(array("message"=>"Please Input Your Name and Email Before Sending"));
 }
 
 ?>

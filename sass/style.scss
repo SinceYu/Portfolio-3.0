@@ -1,163 +1,5 @@
-@mixin Rotate($deg){
-  transition:.4s ease;
-  -webkit-transition: .4s ease;
-  -moz-transition: .4s ease;
-  -o-transition: .4s ease;
-  -ms-transition: .4s ease;
-
-  transform:rotate($deg);
-  -webkit-transform:rotate($deg);
-  -moz-transform:rotate($deg);
-  -ms-transform:rotate($deg);
-  -o-transform:rotate($deg);
-}
-
-@mixin round($size){
-  height:$size;
-  width: $size;
-  border-radius: $size * .5;
-  -webkit-border-radius:$size * .5;
-  -moz-border-radius: $size * .5;
-  -o-border-radius: $size * .5;
-
-  overflow: hidden;
-}
-
-@mixin radius($size){
-  border-radius: $size;
-  -webkit-border-radius:$size;
-  -moz-border-radius: $size;
-  -o-border-radius: $size
-}
-
-@mixin shadow($size){
-
-}
-
-@mixin box-shadow($properties) {
-  box-shadow: $properties;
-  -webkit-box-shadow: $properties;
-  -o-box-shadow: $properties;
-  -moz-box-shadow: $properties;
-}
-
-@mixin box-innerShadow($properties){
-  box-shadow:inset $properties;
-  -webkit-box-shadow:inset $properties;
-  -o-box-shadow:inset $properties;
-  -moz-box-shadow:inset $properties;
-}
-
-@mixin box-radius($properties){
-  -webkit-border-radius: $properties;
-  border-radius: $properties;
-  background-clip: padding-box;
-}
-
-@mixin perspective($properties){
-  -webkit-perspective: $properties;
-  -moz-perspective: $properties;
-  -ms-perspective: $properties;
-  perspective: $properties;
-}
-
-@mixin transform($properties){
-  -webkit-transform: $properties;
-  -moz-transform: $properties;
-  -ms-transform: $properties;
-  transform: $properties;
-}
-
-@mixin transform-style($properties){
-  -webkit-transform-style: $properties;
-  -moz-transform-style: $properties;
-  -ms-transform-style: $properties;
-  transform-style: $properties;
-}
-
-@mixin \3dtransform(){
-  @include perspective(300px);
-  @include transform(rotateY(180deg));
-  @include transform-style(preserve-3d);
-}
-
-@mixin transition($properties){
-  -webkit-transition: $properties;
-  -moz-transition: $properties;
-  -o-transition: $properties;
-  transition: $properties;
-}
-
-@mixin backface-visibility($properties){
-  backface-visibility:$properties;
-  -webkit-backface-visibility:$properties;
-  -moz-backface-visibility:$properties;
-}
-
-@mixin keyframes($name){
-
-  @-webkit-keyframes #{$name} {
-    from  {-webkit-transform:rotate(0deg);} to {-webkit-transform:rotate(360deg);}
-  }
-  @-moz-keyframes #{$name} {
-    from  {-moz-transform:rotate(0deg);} to {-moz-transform:rotate(360deg);}
-  }
-  @-o-keyframes #{$name} {
-    from  {-o-transform:rotate(0deg);} to {-o-transform:rotate(360deg);}
-  }
-  @keyframes #{$name} {
-    from  {transform:rotate(0deg);} to {transform:rotate(360deg);}
-  }
-}
-
-@mixin animate($name){
-  -webkit-animation: $name 5s infinite; /* Chrome, Safari 5+ */
-  -moz-animation: $name 5s infinite; /* Firefox 5-15 */
-  -o-animation: $name 5s infinite; /* Opera 12.00 */
-  animation: $name 5s infinite; /* Chrome, Firefox 16+, IE 10+, Opera 12.10+ */
-}
-
-span{
-  display: inline-block;
-}
-a{
-    text-decoration:none;
-    color:#999999;
-}
-ul{
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: center;
-}
-p{
-   padding: 0;
-   margin: 0;
- }
-label,input,textarea{
-  outline: none;
-  display: block;
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-input,textarea{
-  width: 350px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-transition: .1s linear;
-  -moz-transition: .1s linear;
-  &:focus{
-    padding:5px;
-    border:3px solid sandybrown;
-  }
-}
-img{
-  border: 0;
-  height: 100%;
-  margin: 0 auto;
-  z-index: 0;
-}
+@import "mixin";
+@import "reset";
 
 html{
   font-size: 62.5%;
@@ -170,10 +12,17 @@ body{
   background-color: #f6f6f6;
 }
 
+section{
+  width:100%;
+}
+
+.content{
+  width:980px;
+  margin: 0 auto;
+}
 
 #about{
   background-color:#ffffff;
-  position:relative;
 }
 
 #portfolio{
@@ -260,26 +109,29 @@ body{
 }
 
 .sloganWrapper{
-	position:absolute;
-	width:980px;
 }
 
 .aboutMyself{
   font:1.8em 'Happy Monkey', sans-serif;
   float: right;
   padding: 20px;
-  display: none;
+  display:none;
+  p{
+    height: 20px;
+  }
   a{
     color:#fb8521;
   }
 }
 
 .resume{
-	width:980px;
-	position:absolute;
+  display: none;
+  p{
+    display: block;
+    padding: 10px 0;
+  }
+
 }
-
-
 
 .firstRow{
   color:#e5e5e5;
@@ -293,67 +145,6 @@ body{
 .fourthRow{
   color:darken(#e5e5e5,75%)
 }
-
-
-
-
-.round{
-  @include round(220px);
-}
-
-.flipContainer {
-  padding-top:50px;
-  position: relative;
-}
-
-.flipWrapper{
-  margin:0 160px 50px 0;
-  float: left;
-
-  &:nth-child(3n){
-    margin:0;
-    float: right;
-  }
-}
-
-.flip{
-  background-color: #ffffff;
-  border:1px solid #f6f6f6;
-
-  @include box-innerShadow(0 0 2px #333);
-
-  &:hover{
-    border-left: none;
-
-    .flipFront{
-      @include Rotate(360deg);
-      box-shadow: 0px 0 10px #252525;
-    }
-
-    .flipBack{
-      display: inline-block;
-    }
-
-  }
-
-}
-
-.flipFront{
-  img{
-    @include radius(110px);
-  }
-  @include Rotate(0deg);
-  float: left;
-  display: inline-block;
-
-}
-
-.flipBack{
-  display: none;
-  margin-left: 50px;
-  float: left;
-}
-
 
 #canvas-map{
   height: 100%;
@@ -373,7 +164,7 @@ body{
   margin: 90px 20px;
   color: #999999;
   font-size: 15px;
-  z-index: 100;
+  z-index: 5;
 
 }
 
@@ -381,7 +172,6 @@ body{
   position: absolute;
   z-index: 100;
   left:50%;
-  bottom:20%;
   bottom:20%;
   li{
     display: inline-block;
@@ -408,12 +198,16 @@ body{
   padding: 5px 0;
 }
 
+.message{
+  font-size: .8em;
+  color:red;
+}
 .wrapper{
   -webkit-transition: .15s linear;
 }
 
 .footer{
-    border-top:1px solid lightgrey ;
+  border-top:1px solid lightgrey ;
 }
 
 .button{
@@ -435,21 +229,11 @@ body{
   }
 }
 
-.commonWith{
-    width: 980px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.commonHeight{
-  height: 620px;
-  overflow: hidden;
-}
-
 .scrollNav{
   position: fixed;
   right: 10px;
   top: 40%;
+  z-index: 10;
 }
 
 .scrollNavItem{
@@ -462,14 +246,14 @@ body{
   }
 
   a.active{
-	  .dot{
-        background: none;
-        @include round(8px);
-      }
-	.hoverText{
-      opacity:1;
-    	}
+    .dot{
+      background: none;
+      @include round(8px);
     }
+    .hoverText{
+      opacity:1;
+    }
+  }
 }
 
 .dot{
@@ -492,33 +276,17 @@ body{
     width:780px;
   }
 
-  .slogan{
-    text-align: center;
+  .subTitle{
+    float: none;
+  }
+  
+  .aboutMyself{
+    float: none;
   }
 
-  .commonWith{
-    width: 680px;
-    max-width: 780px;
-  }
-
-  .flipWrapper{
-    margin:0 10px 5px 0;
-  }
-
-  .flip{
-    &:hover{
-
-      .flipFront{
-        @include Rotate(0deg);
-        display:none;
-      }
-      .flipBack{
-        margin: 20px;
-        text-align: center;
-        display: block;
-      }
-
-    }
+  .content{
+    width: 100%;
+    margin: 0 auto;
   }
 
 }
@@ -534,17 +302,10 @@ body{
     font-size: 4.2em;
   }
 
-  .commonWith{
-    width: 380px;
-    max-width: 480px;
-    margin: 0 auto;
-  }
-
   .logoWrapper{
     float: none;
     text-align: center;
   }
-
 
   .navLinks{
     float: none;
@@ -560,20 +321,5 @@ body{
     }
   }
 
-  .flipWrapper{
-    margin:0;
-    &:nth-child(3n){
-      margin:0;
-      float: none;
-    }
-  }
-
-  .flip{
-    overflow: hidden;
-    margin:25px;
-  }
-
-  .flipFront{
-  }
 
 }

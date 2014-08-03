@@ -1,0 +1,41 @@
+span{
+  display: inline-block;
+}
+a{
+  text-decoration:none;
+  color:#999999;
+}
+ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+p{
+  padding: 0;
+  margin: 0;
+}
+label,input,textarea{
+  outline: none;
+  display: block;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+input,textarea{
+  width: 350px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-transition: .1s linear;
+  -moz-transition: .1s linear;
+  &:focus{
+    padding:5px;
+    border:3px solid sandybrown;
+  }
+}
+img{
+  border: 0;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 0;
+}

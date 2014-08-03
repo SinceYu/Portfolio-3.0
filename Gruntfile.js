@@ -32,8 +32,7 @@ module.exports = function(grunt){
 						sassDir: 'sass',
 						cssDir: 'css',
 						raw: 'preferred_syntax = :scss', // Use `raw` since it's not directly available
-						environment:'development',
-                        clean:true
+						environment:'development'
 					}
 				}
 
@@ -53,7 +52,7 @@ module.exports = function(grunt){
 	
 	//grunt.registerTask('default', ["jshint","uglify"]);
 	
-	grunt.registerTask('default', ["jshint","compass:dev","watch"]);
+	grunt.registerTask('default', ['watch']);
 	
 	
 };

@@ -1,37 +1,36 @@
 (function($){
 
     var defaults= {
-        animation:true
+        //TODO add more options
     };
 
     $.fn.rollDisk = function(options){
 
        options = $.extend(options,defaults);
 
-        var $flipper = $(this).find('.flip');
+        var $rollContainer = $(this);
+        var $rollDisk = $(this).find('.roll');
 
-        var flipPosition;
+         var rollDiskWidth = $rollDisk.innerWidth();
+
+        var rollPosition;
+        var rollContainerWidth= $rollContainer.innerWidth();
 
         return this.each(function(){
 
-            if (options.animation){
+            $(window).resize(function() {
+               rollContainerWidth = $rollContainer.innerWidth();
+            });
 
-                $flipper.hover(function(){
-                    flipPosition = $(this).position().left;
-                    $(this).css({"position":"absolute","left":flipPosition,"z-index":"100"}).animate({"width":"980px","left":"0"},400);
+            $rollDisk.hover(function(){
+                    rollPosition = $(this).position().left;
+                    $(this).css({"position":"absolute","left":rollPosition,"z-index":"100"}).animate({"width":rollContainerWidth,"left":"0"},400);
                 },function(){
-                    $(this).animate({"width":"220px","left":flipPosition},300,function(){
+                    $(this).animate({"width":rollDiskWidth,"left":rollPosition},300,function(){
                         $(this).css({"position":"static","z-index":"0"});
                     });
                 });
 
-            }else{
-
-                $flipper.hover(function(){
-                    $(this).css("z-index",100);
-                });
-
-            }
         });
 
     };

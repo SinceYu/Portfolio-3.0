@@ -1,0 +1,87 @@
+@import "mixin";
+
+.rollContainer {
+  padding:50px 0;
+  position: relative;
+}
+
+.rollWrapper{
+  padding: 10px;
+  float: left;
+}
+
+.roll{
+  background-color: #ffffff;
+  border:1px solid #f6f6f6;
+
+  @include box-innerShadow(0 0 2px #333);
+
+  &:hover{
+
+    border-left: none;
+
+    .rollFront{
+      @include Rotate(360deg);
+      box-shadow: 0px 0 10px #252525;
+    }
+
+    .rollBack{
+      display: inline-block;
+    }
+
+  }
+
+}
+
+.round{
+  @include round(220px);
+}
+
+
+.rollFront{
+  img{
+    @include radius(50%);
+  }
+  @include Rotate(0deg);
+  float: left;
+  display: inline-block;
+
+}
+
+.rollBack{
+  display: none;
+  margin-left: 50px;
+}
+
+
+@media screen and (max-width:"780px"){
+  .roll{
+    &:hover{
+      .rollFront{
+        @include Rotate(0deg);
+        display:none;
+      }
+      .rollBack{
+        margin: 20px;
+        text-align: center;
+        display: block;
+      }
+
+    }
+  }
+}
+
+
+@media screen and (max-width:"480px"){
+
+  .rollWrapper{
+    float: none;
+    margin: 0 auto;
+  }
+
+  .roll{
+    overflow: hidden;
+    margin:0;
+  }
+
+}
