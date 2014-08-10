@@ -44,7 +44,7 @@
 
                 $scrollNavLinks.each(function(){
                   var target = $('[id='+this.hash.slice(1)+']');
-                    if (window.scrollY >= target.offset().top){
+                    if (window.pageYOffset >= target.offset().top){
                         $scollNav.find('.active').removeClass('active');
                         $(this).addClass('active');
                     }

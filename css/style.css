@@ -34,7 +34,7 @@ label, input, textarea {
 
 /* line 25, ../sass/_reset.scss */
 input, textarea {
-  width: 350px;
+  width: 100%;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-transition: .1s linear;
@@ -74,7 +74,7 @@ section {
 
 /* line 19, ../sass/style.scss */
 .content {
-  width: 980px;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -276,9 +276,9 @@ section {
   height: 100%;
   position: absolute;
   top: 0;
-  bottom: -200px;
   left: 0;
   right: 0;
+  bottom: -200px;
   z-index: 0;
 }
 
@@ -352,7 +352,7 @@ section {
 }
 
 /* line 213, ../sass/style.scss */
-.button {
+.button-send {
   padding: 10px 20px;
   display: block;
   margin: 10px 0;
@@ -362,15 +362,19 @@ section {
   cursor: pointer;
   text-transform: uppercase;
 }
+/* line 222, ../sass/style.scss */
+.button-send:hover {
+  background: #0ffb2d;
+}
 
-/* line 225, ../sass/style.scss */
+/* line 228, ../sass/style.scss */
 .clearFix:after {
   clear: both;
   content: '';
   display: block;
 }
 
-/* line 232, ../sass/style.scss */
+/* line 235, ../sass/style.scss */
 .scrollNav {
   position: fixed;
   right: 10px;
@@ -378,15 +382,15 @@ section {
   z-index: 10;
 }
 
-/* line 239, ../sass/style.scss */
+/* line 242, ../sass/style.scss */
 .scrollNavItem {
   margin: 10px;
 }
-/* line 243, ../sass/style.scss */
+/* line 246, ../sass/style.scss */
 .scrollNavItem:hover .hoverText {
   opacity: 1;
 }
-/* line 249, ../sass/style.scss */
+/* line 252, ../sass/style.scss */
 .scrollNavItem a.active .dot {
   background: none;
   height: 8px;
@@ -396,12 +400,12 @@ section {
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-/* line 253, ../sass/style.scss */
+/* line 256, ../sass/style.scss */
 .scrollNavItem a.active .hoverText {
   opacity: 1;
 }
 
-/* line 259, ../sass/style.scss */
+/* line 262, ../sass/style.scss */
 .dot {
   box-sizing: border-box;
   border: 1px solid #999999;
@@ -415,7 +419,7 @@ section {
   -o-border-radius: 2px;
 }
 
-/* line 267, ../sass/style.scss */
+/* line 270, ../sass/style.scss */
 .hoverText {
   opacity: 0;
   width: 50px;
@@ -423,58 +427,71 @@ section {
 }
 
 @media screen and (max-width: 780px) {
-  /* line 275, ../sass/style.scss */
-  .sloganWrapper {
-    width: 780px;
-  }
-
-  /* line 279, ../sass/style.scss */
+  /* line 278, ../sass/style.scss */
   .subTitle {
     float: none;
   }
 
-  /* line 283, ../sass/style.scss */
+  /* line 282, ../sass/style.scss */
   .aboutMyself {
     float: none;
   }
 
-  /* line 287, ../sass/style.scss */
+  /* line 286, ../sass/style.scss */
   .content {
     width: 100%;
     margin: 0 auto;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 296, ../sass/style.scss */
+  /* line 295, ../sass/style.scss */
   body {
     font-size: 1em;
     line-height: 1.2em;
   }
 
-  /* line 301, ../sass/style.scss */
+  /* line 300, ../sass/style.scss */
   .slogan {
     font-size: 4.2em;
   }
 
-  /* line 305, ../sass/style.scss */
+  /* line 304, ../sass/style.scss */
   .logoWrapper {
     float: none;
     text-align: center;
   }
 
-  /* line 310, ../sass/style.scss */
+  /* line 309, ../sass/style.scss */
+  .contactForm {
+    width: 100%;
+    position: static;
+    margin: 0 auto;
+  }
+
+  /* line 315, ../sass/style.scss */
+  #canvas-map {
+    display: none;
+  }
+
+  /* line 318, ../sass/style.scss */
+  .socialLinks {
+    position: static;
+    margin-top: 50px;
+  }
+
+  /* line 323, ../sass/style.scss */
   .navLinks {
     float: none;
     text-align: center;
     padding: 0;
     margin: 0;
   }
-  /* line 315, ../sass/style.scss */
+  /* line 328, ../sass/style.scss */
   .navLinks li {
     width: 100%;
     margin: 10px auto;
   }
-  /* line 318, ../sass/style.scss */
+  /* line 331, ../sass/style.scss */
   .navLinks li:hover {
     background-color: deepskyblue;
   }
